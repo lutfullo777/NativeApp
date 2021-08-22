@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Text, View, Alert, StyleSheet, BackHandler } from "react-native";
+import { Alert, StyleSheet, BackHandler } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Tasks from "./Tasks";
 import Done from "./Done";
