@@ -1,18 +1,20 @@
 {
   "expo": {
-    "name": "NativeApp",
-    "slug": "NativeApp",
+    "name": "Vazifalarim",
+    "description": "Vazifalarni saqalsh uchun qulay bo'lgan dastur",
+    "slug": "Vazifalarim",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/todo.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/todo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
+    "userInterfaceStyle": "automatic",
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -20,8 +22,9 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.yourcompany.yourappname",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/todo.png",
         "backgroundColor": "#FFFFFF"
       }
     },
