@@ -82,7 +82,7 @@ export default function AddTask({ navigation }) {
         onPress={onPressHandler}
       >
         <Text style={styles.text}>Qo'shish</Text>
-        <Fontawesome5 name="plus" style={styles.icon} />
+        <Fontawesome5 name="plus" style={styles.plus} />
       </TouchableOpacity>
     </View>
   );
@@ -125,7 +125,13 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 25,
     position: "absolute",
-    right: 20,
+    right:5
+  },
+  plus: {
+    color: "#fff",
+    fontSize: 25,
+    position: "absolute",
+    right:20
   },
   button: {
     width: "80%",

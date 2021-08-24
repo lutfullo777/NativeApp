@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   View,
   TextInput,
@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   StyleSheet,
   Alert,
-  AsyncStorage,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
@@ -35,16 +34,7 @@ const Login = ({ navigation }) => {
     }
   };
 
-  const getData = async () => {
-    const data = await AsyncStorage.getItem("name");
-    if (data) {
-      navigation.navigate("Start");
-    }
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
+ 
 
   return (
     <View style={styles.container}>

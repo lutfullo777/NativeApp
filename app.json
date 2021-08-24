@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "Vazifalarim",
-    "description": "Vazifalarni saqalsh uchun qulay bo'lgan dastur",
-    "slug": "Vazifalarim",
+    "name": "Vazifalar",
+    "description": "Vazifalarni saqlash uchun qulay bo'lgan dastur",
+    "slug": "Vazifalar",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/todo.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

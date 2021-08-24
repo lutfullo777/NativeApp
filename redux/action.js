@@ -31,12 +31,17 @@ import { AsyncStorage } from 'react-native';
 export const GetTodoAction = () =>async dispatch => {
     dispatch({type:GET_TODOS_REQ});
     try{        
-        let noDone = await AsyncStorage.getItem('nodone');
-        const todos = JSON.parse(await AsyncStorage.getItem("todo"));
+        let noDone,todos;
+        if(await AsyncStorage.getItem('todo')===null){
+            todos=[]
+        }else{
+            todos = JSON.parse(await AsyncStorage.getItem("todo"));
+        }
+
         const todoActive = todos.filter(todo=>new Date(todo.date)-new Date()>=0)
         const notActive = todos.filter(todo => new Date(todo.date)- new Date()<0)
 
-        if(noDone===null){
+        if(await AsyncStorage.getItem('nodone')===null){
             noDone = []
         }else{
             noDone = JSON.parse(await AsyncStorage.getItem('nodone'))
@@ -78,9 +83,9 @@ export const LoginAction = (name, navigation) =>async dispatch => {
 export const TodoAction = (todo, navigation) => async dispatch =>{
     dispatch({type:SET_TODO_REQ});
     try{
-        let todos = await AsyncStorage.getItem("todo");
+        let todos ;
 
-        if (todos === null) {
+        if (await AsyncStorage.getItem("todo") === null) {
             todos = [];
         } else {
             todos = JSON.parse(await AsyncStorage.getItem("todo"));
@@ -138,7 +143,12 @@ export const getDoneAction = () =>async dispatch => {
 
     dispatch({type:GET_DONE_REQ});
     try{        
-        const done = JSON.parse(await AsyncStorage.getItem("done"));
+        let done;
+        if(await AsyncStorage.getItem("done")===null){
+            done=[]
+        }else{
+            done = JSON.parse(await AsyncStorage.getItem("done"));
+        }
         dispatch({type:GET_DONE, payload: done})
 
     }catch(err){
@@ -161,8 +171,12 @@ export const getDoneScreenAction = (id) =>async dispatch => {
 export const noDoneAction = () =>async dispatch => {
     dispatch({type:NO_DONE_REQ});
     try{        
-        const nodones = JSON.parse(await AsyncStorage.getItem("nodone"));
-        
+        let nodones;
+        if(await AsyncStorage.getItem("nodone")===null){
+            nodones=[]
+        }else{
+            nodones = JSON.parse(await AsyncStorage.getItem("nodone"))
+        }
         dispatch({type:NO_DONE, payload: nodones})
 
     }catch(err){

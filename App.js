@@ -16,10 +16,11 @@ import { Store } from "./redux/store";
 const Stack = createStackNavigator();
 
 export default function App() {
-  const [data, setData] = useState();
-
+  const [data, setData] = useState(true);
   const getData = async () => {
-    (await AsyncStorage.getItem("user")) ? setData(false) : setData(true);
+    (await AsyncStorage.getItem("name")) === null
+      ? setData(true)
+      : setData(false);
   };
   useEffect(() => {
     getData();
